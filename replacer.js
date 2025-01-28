@@ -311,7 +311,7 @@ const Wrapper = createReactClass({
 					/>)}
 				</main>
 				<footer>
-					by&nbsp;<a href="https://www.x128.com.br">x128</a>
+					<a href="https://github.com/lexblagus/serial-replacer">source</a>
 				</footer>
 			</div>
 		</React.Fragment>
