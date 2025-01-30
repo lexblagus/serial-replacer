@@ -4,6 +4,7 @@ import defaultOptions from "../../constants/options";
 import Step from "../Step";
 import { StyledFooter, StyledHeader, StyledMain, StyledWrapper, WrapperGlobalStyle } from "./styled";
 import useHandlers from './useHandlers';
+import packageJson from '../../../package.json';
 
 // =============================================================================
 
@@ -60,7 +61,9 @@ const Wrapper = () => {
 					/>)}
 				</StyledMain>
 				<StyledFooter>
-					<a href="https://github.com/lexblagus/serial-replacer">source</a>
+					<span style={{color: 'hsla(0, 0%, 50%, 0.75)'}}>v{packageJson.version} (<a href="https://github.com/lexblagus/serial-replacer">source</a>)</span>
+					
+					
 				</StyledFooter>
 			</StyledWrapper>
 		</>
