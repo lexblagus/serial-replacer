@@ -1,5 +1,5 @@
-import { Options, Option } from "../../types.d";
-import { AddStep, ChangeFind, ChangeInput, ChangeOption, ChangeReplace, RemoveStep, ReplaceAll, Replacer, ReplaceStep } from '../../types.d';
+import { Options } from "../../types.d";
+import { AddStep, ChangeFind, ChangeInput, ChangeOption, ChangeReplace, RemoveStep, ReplaceAll, ReplaceStep } from '../../types.d';
 
 export interface StepComponent {
 	input?: string;

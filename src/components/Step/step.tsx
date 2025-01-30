@@ -65,7 +65,7 @@ const Step = (props: StepComponent) => {
 					<input
 						type="checkbox"
 						id={`checkbox-regexp-${index}`}
-						defaultChecked={options.regexp}
+						checked={options.regexp}
 						onChange={(event: ChangeEvent<HTMLInputElement>) => {
 							handleChangeOption(Option.RegularExpression, index, event.target.checked);
 						}}
@@ -75,7 +75,7 @@ const Step = (props: StepComponent) => {
 					<input
 						type="checkbox"
 						id={`checkbox-global-${index}`}
-						defaultChecked={options.global}
+						checked={options.global}
 						onChange={(event: ChangeEvent<HTMLInputElement>) => {
 							handleChangeOption(Option.Global, index, event.target.checked);
 						}}
@@ -85,7 +85,7 @@ const Step = (props: StepComponent) => {
 					<input
 						type="checkbox"
 						id={`checkbox-multiline-${index}`}
-						defaultChecked={options.multiline}
+						checked={options.multiline}
 						onChange={(event: ChangeEvent<HTMLInputElement>) => {
 							handleChangeOption(Option.Multiline, index, event.target.checked);
 						}}
@@ -95,7 +95,7 @@ const Step = (props: StepComponent) => {
 					<input
 						type="checkbox"
 						id={`checkbox-caseSensitive-${index}`}
-						defaultChecked={options.caseSensitive}
+						checked={options.caseSensitive}
 						onChange={(event: ChangeEvent<HTMLInputElement>) => {
 							handleChangeOption(Option.CaseSensitive, index, event.target.checked);
 						}}

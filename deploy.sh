@@ -31,12 +31,13 @@ rm -rf ./dist
 
 echo ''
 echo '--------------------------------------------------------------------------------'
-echo "Version $VERSION"
+echo "Version"
 echo '--------------------------------------------------------------------------------'
 
 npm version patch
 VERSION=$(grep '"version"' package.json | awk -F'"' '{print $4}')
 git push
+echo "version $VERSION"
 
 
 echo ''
@@ -45,10 +46,19 @@ echo "Build"
 echo '--------------------------------------------------------------------------------'
 
 npm run build
-REMOTE_PATH=/home/www/tools.blag.us/serial-replacer
+
+
+echo ''
+echo '--------------------------------------------------------------------------------'
+echo "Archive"
+echo '--------------------------------------------------------------------------------'
+
 mkdir deploy
 ARCHIVE="dist-$VERSION.zip"
-zip -r ./deploy/$ARCHIVE ./dist
+echo "archive $ARCHIVE"
+cd ./dist
+zip -r ../deploy/$ARCHIVE .
+cd ..
 rm -rf ./dist
 
 
@@ -66,9 +76,11 @@ else
   echo "Upload & publish to $(cat secret/host)"
   echo '--------------------------------------------------------------------------------'
 
+  REMOTE_PATH=/home/www/tools.blag.us/serial-replacer
+  echo "remote path $REMOTE_PATH"
   sshpass -f secret/pass scp -P $(cat secret/port) ./deploy/$ARCHIVE $(cat secret/user)@$(cat secret/host):$REMOTE_PATH
   rm -rf ./deploy
-  sshpass -f secret/pass ssh $(cat secret/user)@$(cat secret/host) -p $(cat secret/port) "cd $REMOTE_PATH && rm -rf ./dist && unzip ./$ARCHIVE && rm ./$ARCHIVE"
+  sshpass -f secret/pass ssh $(cat secret/user)@$(cat secret/host) -p $(cat secret/port) "cd $REMOTE_PATH && unzip ./$ARCHIVE && rm ./$ARCHIVE"
 
 
   echo ''

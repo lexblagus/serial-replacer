@@ -1,9 +1,23 @@
-import { Dispatch, SetStateAction, useState } from 'react';
-import { AddStep, ChangeFind, ChangeInput, ChangeOption, ChangeReplace, RemoveStep, ReplaceAll, Replacer, ReplaceStep } from '../../types.d';
+import { Dispatch, SetStateAction } from 'react';
+import { AddStep, ChangeFind, ChangeInput, ChangeOption, ChangeReplace, RemoveStep, ReplaceAll, Replacer, ReplaceStep, Options } from '../../types.d';
 import { replaceStep } from '../../utils/aux';
 
 const useHandlers = (state: Replacer, setState: Dispatch<SetStateAction<Replacer>>) => {
 	const handleChangeOption: ChangeOption = (option, index, enabled) => {
+		setState({
+			...state,
+			steps: [
+				...state.steps.slice(0, index),
+				{
+					...state.steps[index],
+					options: {
+						...state.steps[index].options,
+						[option]: enabled,
+					} as Options, // trust options as complete from state
+				},
+				...state.steps.slice(index + 1)
+			]
+		})
 	};
 
 	const handleChangeInput: ChangeInput = (content) => {
