@@ -280,8 +280,6 @@ const Wrapper = createReactClass({
 
 	render() {
 		return <React.Fragment>
-			{(() => {
-			})()}
 			<div className={'wrapper'}>
 				<header>
 					<h1>Serial Replacer</h1>
