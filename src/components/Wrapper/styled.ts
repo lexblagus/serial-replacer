@@ -42,6 +42,6 @@ export const StyledMain = styled.div`
 export const StyledFooter = styled.div`
 	display: flex;
 	justify-content: flex-end;
-	font-size: 0.8em;
+	font-size: var(--font-size-small);
 	padding: var(--spacing);
 `;

@@ -18,5 +18,8 @@ At [tools.blag.us/serial-replacer](http://tools.blag.us/serial-replacer)
 ## Next features
 
 - word wrap
+- feedback (change quantity / error)
 - copy/paste
 - save/load
+- step color/expand/collapse
+- step comments

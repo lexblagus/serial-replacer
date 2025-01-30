@@ -17,15 +17,15 @@ export const StyledStep = styled.div`
 `;
 
 export const StyledLabel = styled.div`
-	font-size: 0.8em;
+	font-size: var(--font-size-small);
 	text-transform: uppercase;
 	display: flex;
 	justify-content: flex-end;
-	margin-top: var(--spacing);
+	margin-top: 1px;
 `;
 
 export const StyledOptions = styled.div`
-	font-size: 0.8em;
+	font-size: var(--font-size-small);
 	display: grid;
 	grid-template-columns: auto 1fr;
 	align-items: center;
@@ -38,13 +38,13 @@ export const StyledActions = styled.div`
 	gap: var(--spacing);
 
 	button {
-		font-size: 0.8em;
+		font-size: var(--font-size-small);
 		text-transform: uppercase;
 	}
 `;
 
 export const StyledResult = styled.div`
-	font-family: monospace;
+	font-family: var(--font-family-monospace);
 	white-space: pre;
 	overflow: auto;
 	box-shadow: var(--result-shadow);

@@ -22,6 +22,21 @@ const GlobalStyle = createGlobalStyle`
 		--button-border-color: var(--button-text-color);
 
 		--spacing: 4px;
+
+		/*
+		'Bodoni Moda'
+		'IBM Plex Sans'
+		'IBM Plex Sans Condensed'
+		'IBM Plex Mono'
+		'IBM Plex Serif'
+		'Roboto'
+		'Titillium Web'
+		'Rajdhani'
+		*/
+		--font-family: 'IBM Plex Sans Condensed', sans-serif;
+		--font-family-monospace: 'IBM Plex Mono', monospace;
+		--font-size-small: 0.8em;
+		
 		--box-shadow-input-concave:
 			inset 2px 2px 2px 0px hsla(0, 0%, 0%, 0.5),
 			inset -1px -1px 2px 0px hsla(0, 0%, 0%, 0.25);
@@ -53,17 +68,7 @@ const GlobalStyle = createGlobalStyle`
 		height: 100%;
 	}
 	body {
-		/*
-		'Bodoni Moda'
-		'IBM Plex Sans'
-		'IBM Plex Sans Condensed'
-		'IBM Plex Mono'
-		'IBM Plex Serif'
-		'Roboto'
-		'Titillium Web'
-		'Rajdhani'
-		*/
-		font-family: 'IBM Plex Sans Condensed', sans-serif;
+		font-family: var(--font-family);
 		color: var(--text-color);
 		background-color: var(--background-color);
 	}
@@ -152,7 +157,7 @@ const GlobalStyle = createGlobalStyle`
 		border-radius: 6px;
 		box-shadow: var(--box-shadow-input-concave);
 		background-color: var(--textarea-background-color);
-		font-family: monospace;
+		font-family: var(--font-family-monospace);
 	}
 
 	/* -------------------------------------------------------------------------- */
