@@ -37,7 +37,6 @@ echo '--------------------------------------------------------------------------
 npm version patch
 VERSION=$(grep '"version"' package.json | awk -F'"' '{print $4}')
 git push
-echo "version $VERSION"
 
 
 echo ''
@@ -80,7 +79,7 @@ else
   echo "remote path $REMOTE_PATH"
   sshpass -f secret/pass scp -P $(cat secret/port) ./deploy/$ARCHIVE $(cat secret/user)@$(cat secret/host):$REMOTE_PATH
   rm -rf ./deploy
-  sshpass -f secret/pass ssh $(cat secret/user)@$(cat secret/host) -p $(cat secret/port) "cd $REMOTE_PATH && unzip ./$ARCHIVE && rm ./$ARCHIVE"
+  sshpass -f secret/pass ssh $(cat secret/user)@$(cat secret/host) -p $(cat secret/port) "cd $REMOTE_PATH && find . -mindepth 1 ! -name "$ARCHIVE" -delete && unzip ./$ARCHIVE && rm ./$ARCHIVE"
 
 
   echo ''
