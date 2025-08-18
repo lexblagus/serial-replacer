@@ -9,7 +9,7 @@ Clone the repo and then:
 - nvm use # if you use NVM
 - npm i
 - npm run dev
-- dial [http://localhost:8090/](http://localhost:8090/) on your browser
+- dial [http://localhost:8090/serial-replacer](http://localhost:8090/serial-replacer) on your browser
 
 ## Live
 
